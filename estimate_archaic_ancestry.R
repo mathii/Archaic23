@@ -78,7 +78,7 @@ for(i in 1:n){
     text(results[i,"PC1"], results[i,"PC2"], txt, pos=4)
 }
 legend("bottomleft", names(cols), col=cols, pch=16, bty="n")
-dev.off()
+tmp<-dev.off()
 
 pdf("Denisovan_ancestry.pdf")
 plot(pca[,1], pca[,2], pch=16, col=cols[info[rownames(pca),"Region"]], xlab=paste0("PC",1), ylab=paste0("PC", 2), main="Denisovan ancestry")
@@ -89,4 +89,4 @@ for(i in 1:n){
     text(results[i,"PC1"], results[i,"PC2"],txt, pos=4)
 }
 legend("bottomleft", names(cols), col=cols, pch=16, bty="n")
-dev.off()
+tmp<-dev.off()
